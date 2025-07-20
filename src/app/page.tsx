@@ -161,10 +161,11 @@ export default function HomePage() {
             <div className="lg:order-2">
               <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/images/sentiment_analysis.png" // Placeholder for the Sokrati.space platform interface
                   alt="Sokrati.space Platform"
                   width={600}
                   height={400}
+                  unoptimized
                   className="h-full w-full object-cover"
                 />
               </div>
