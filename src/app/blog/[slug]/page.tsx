@@ -38,7 +38,7 @@ export async function generateStaticParams() {
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   // Await params if it's a promise, then destructure.
   // Although Next.js docs usually show direct access, Turbopack seems to require this.
