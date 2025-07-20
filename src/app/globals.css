@@ -290,3 +290,28 @@ section {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.sonner-toast {
+  --normal-background: var(--background);
+  --normal-foreground: var(--foreground);
+  --success-background: var(--primary);
+  --success-foreground: var(--primary-foreground);
+  --error-background: var(--destructive);
+  --error-foreground: hsl(
+    var(--destructive-foreground)
+  ); /* Assuming you have this */
+  --info-background: var(--muted);
+  --info-foreground: var(--muted-foreground);
+  --warning-background: oklch(
+    0.85 0.1 70
+  ); /* Example warn color if not in theme */
+  --warning-foreground: oklch(0.2 0 0); /* Example warn text color */
+  --border: var(--border);
+  --normal-border: var(--border);
+  --success-border: var(--primary);
+  --error-border: var(--destructive);
+  --info-border: var(--muted);
+  --warning-border: oklch(0.85 0.1 70);
+
+  /* Adjust text styles if needed */
+  /* font-family: var(--font-sans); */
+}
