@@ -17,29 +17,25 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     description: "Get in touch via email",
-    value: "vlad@example.com",
-    href: "mailto:vlad@example.com",
+    value: "lazar.vlad151@gmail.com",
+    href: "mailto:lazar.vlad151@gmail.com",
   },
   {
     icon: MapPin,
     title: "Location",
     description: "Based in",
-    value: "San Francisco, CA",
+    value: "Copenhagen, Denmark",
     href: null,
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    description: "Call or text",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
   },
 ];
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com", icon: Github },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-  { name: "Twitter", href: "https://twitter.com", icon: Twitter },
+  { name: "GitHub", href: "https://github.com/vlad151", icon: Github },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/lazar-vlad",
+    icon: Linkedin,
+  },
 ];
 
 export default function ContactPage() {

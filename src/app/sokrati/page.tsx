@@ -122,7 +122,7 @@ export default function SokratiPage() {
             </div>
             <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted">
               <Image
-                src="/image_8a6686.jpg" // Using one of your app screenshots
+                src="/images/sentiment_analysis.png" // Placeholder for the Sokrati.space platform interface
                 alt="Sokrati note with sentiment analysis"
                 width={600}
                 height={400}
@@ -138,8 +138,8 @@ export default function SokratiPage() {
         <div className="container">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center">
             <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted lg:order-2">
-              <Image
-                src="/IMG_2680.jpg" // Using your other app screenshot
+              <img
+                src="/images/sentiment_trend.png" // Placeholder for the Sokrati.space platform interface
                 alt="Sokrati.space Platform Interface"
                 width={600}
                 height={400}

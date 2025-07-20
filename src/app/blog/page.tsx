@@ -25,7 +25,7 @@ const allPosts = [
     category: "Web Dev",
     date: "2024-01-15",
     slug: "building-scalable-web-applications-nextjs",
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/blog.svg?height=200&width=400",
   },
   {
     id: 2,
@@ -101,8 +101,7 @@ export default function BlogPage() {
           My Blog
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Insights, tutorials, and thoughts on technology, development, and
-          innovation
+          Insights, and thoughts on technology, development, and innovation
         </p>
       </div>
 
@@ -142,7 +141,7 @@ export default function BlogPage() {
           >
             <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
               <Image
-                src={post.image || "/placeholder.svg"}
+                src={post.image || "/images/globe.svg"}
                 alt={post.title}
                 width={400}
                 height={200}
