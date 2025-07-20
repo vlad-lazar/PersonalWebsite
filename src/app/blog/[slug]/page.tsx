@@ -147,7 +147,7 @@ export default async function BlogPostPage({
               </p>
               <div className="mt-4 flex gap-3">
                 <Link
-                  href="https://github.com/vladlazar"
+                  href="https://github.com/vlad151"
                   className="text-muted-foreground hover:text-primary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -155,20 +155,12 @@ export default async function BlogPostPage({
                   <Github className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="https://linkedin.com/in/vladlazar"
+                  href="https://linkedin.com/in/lazar-vlad"
                   className="text-muted-foreground hover:text-primary"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Linkedin className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="https://twitter.com/vladlazar_dev"
-                  className="text-muted-foreground hover:text-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="h-5 w-5" />
                 </Link>
               </div>
             </div>
