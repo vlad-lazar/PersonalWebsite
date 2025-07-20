@@ -2,9 +2,12 @@ import Link from "next/link";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com", icon: Github },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-  { name: "Twitter", href: "https://twitter.com", icon: Twitter },
+  { name: "GitHub", href: "https://github.com/vlad151", icon: Github },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/lazar-vlad",
+    icon: Linkedin,
+  },
 ];
 
 const quickLinks = [
@@ -22,7 +25,7 @@ export function Footer() {
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <div className="flex flex-col items-center space-y-2 md:items-start">
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Vlad Lazar. All rights reserved.
+                © {new Date().getFullYear()} Vlad Lazǎr. All rights reserved.
               </p>
             </div>
 

@@ -273,6 +273,9 @@
   @apply italic;
 }
 
+section {
+  @apply rounded-xl;
+}
 /* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;

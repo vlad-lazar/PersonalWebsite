@@ -13,58 +13,58 @@ import {
   CheckCircle,
   ExternalLink,
   Zap,
-  Shield,
-  Users,
+  BrainCircuit,
   BarChart3,
-  Rocket,
-  Globe,
+  Feather,
+  Smartphone,
+  Lock,
 } from "lucide-react";
 
 const features = [
   {
-    icon: Zap,
-    title: "Lightning Fast Performance",
+    icon: Feather,
+    title: "Minimalist Journaling",
     description:
-      "Built with modern technologies to ensure your team can work at the speed of thought.",
+      "A clean, distraction-free interface designed to help you focus on capturing your thoughts and ideas effortlessly.",
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
+    icon: BrainCircuit,
+    title: "AI-Powered Sentiment Analysis",
     description:
-      "Bank-level security with end-to-end encryption and compliance with industry standards.",
-  },
-  {
-    icon: Users,
-    title: "Seamless Collaboration",
-    description:
-      "Real-time collaboration tools that keep distributed teams connected and productive.",
+      "Using Google's Natural Language API, Sokrati analyzes each note to reveal the underlying emotional tone of your writing.",
   },
   {
     icon: BarChart3,
-    title: "Advanced Analytics",
+    title: "Visualize Your Mind",
     description:
-      "Comprehensive insights and reporting to help you make data-driven decisions.",
+      "Track your emotional trends over time with interactive charts, helping you understand your thought patterns on a deeper level.",
   },
   {
-    icon: Rocket,
-    title: "Rapid Deployment",
+    icon: Lock,
+    title: "Secure & Private",
     description:
-      "Get up and running in minutes with our streamlined onboarding process.",
+      "Your notes are your own. Sokrati uses Firebase Authentication to ensure your personal journal remains secure and private.",
   },
   {
-    icon: Globe,
-    title: "Global Scale",
+    icon: Zap,
+    title: "Inspirational Quotes",
     description:
-      "Built to scale globally with CDN distribution and multi-region support.",
+      "Each session starts with a timeless quote to spark deep thought and inspire your writing.",
+  },
+  {
+    icon: Smartphone,
+    title: "Installable Web App (PWA)",
+    description:
+      "Add Sokrati to your home screen for a fast, native-app-like experience on any device.",
   },
 ];
 
 const benefits = [
-  "Reduce project delivery time by up to 40%",
-  "Improve team collaboration and communication",
-  "Streamline workflow management",
-  "Enhance code quality and security",
-  "Scale effortlessly as your team grows",
+  "Gain a deeper understanding of your emotional patterns",
+  "Identify triggers and trends in your daily reflections",
+  "Cultivate mindfulness through focused writing",
+  "Track your personal growth journey with objective data",
+  "Find inspiration for your daily journaling practice",
 ];
 
 export default function SokratiPage() {
@@ -75,16 +75,15 @@ export default function SokratiPage() {
         <div className="container">
           <div className="mx-auto max-w-4xl text-center">
             <Badge variant="secondary" className="mb-4">
-              Now in Beta
+              Now in Alpha
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-              Sokrati.space:{" "}
-              <span className="text-primary">Revolutionizing</span> Team
-              Collaboration
+              sokrati.space:{" "}
+              <span className="text-primary">Your Intelligent</span> Journal
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
-              The next-generation platform that transforms how development teams
-              collaborate, manage projects, and deliver exceptional results.
+              A personal space for deep thought, self-discovery, and
+              understanding your own mind through the power of AI.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button size="lg" asChild>
@@ -93,12 +92,9 @@ export default function SokratiPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Visit Sokrati.space
+                  Start Journaling
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
-              </Button>
-              <Button variant="outline" size="lg">
-                Watch Demo
               </Button>
             </div>
           </div>
@@ -106,29 +102,28 @@ export default function SokratiPage() {
       </section>
 
       {/* Problem & Solution */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-16 md:py-24 bg-muted/50 p-10">
         <div className="container">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                The Challenge
+                The Unseen Patterns of Your Mind
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Modern development teams face unprecedented challenges:
-                distributed workforces, complex project requirements, and the
-                need for rapid iteration. Traditional tools often create silos,
-                slow down communication, and make it difficult to maintain
-                visibility across projects.
+                We write, think, and feel every day, but rarely do we get a
+                clear picture of our own emotional landscape. Our thoughts are
+                full of subtle patterns and trends that are difficult to see
+                from a day-to-day perspective.
               </p>
               <p className="mt-4 text-base leading-7 text-muted-foreground">
-                Teams spend more time managing tools than building products,
-                leading to decreased productivity and frustrated developers.
+                Without a way to reflect on these patterns, we miss valuable
+                opportunities for personal growth and self-awareness.
               </p>
             </div>
             <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Team Collaboration Challenges"
+                src="/image_8a6686.jpg" // Using one of your app screenshots
+                alt="Sokrati note with sentiment analysis"
                 width={600}
                 height={400}
                 className="h-full w-full object-cover"
@@ -142,24 +137,24 @@ export default function SokratiPage() {
       <section className="py-16 md:py-24">
         <div className="container">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center">
-            <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted lg:order-1">
+            <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted lg:order-2">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/IMG_2680.jpg" // Using your other app screenshot
                 alt="Sokrati.space Platform Interface"
                 width={600}
                 height={400}
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="lg:order-2">
+            <div className="lg:order-1">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                The Solution
+                Clarity Through Intelligence
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Sokrati.space unifies your entire development workflow into a
-                single, intuitive platform. From project planning to deployment,
-                every aspect of your development process is streamlined and
-                optimized.
+                Sokrati.space isn't just a place to write; it's a tool for
+                understanding. It reads between the lines, analyzing the
+                sentiment of your thoughts to provide you with a clear, visual
+                representation of your emotional trends.
               </p>
               <div className="mt-8 space-y-4">
                 {benefits.map((benefit, index) => (
@@ -177,14 +172,14 @@ export default function SokratiPage() {
       </section>
 
       {/* Key Features */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-16 md:py-24 bg-muted/50 p-10">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Powerful Features
+              A smarter way to journal
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Everything you need to build, deploy, and scale your applications
+              Features designed for reflection and insight.
             </p>
           </div>
 
@@ -210,42 +205,16 @@ export default function SokratiPage() {
         </div>
       </section>
 
-      {/* Screenshots/Demo */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              See It in Action
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Experience the power and simplicity of Sokrati.space
-            </p>
-          </div>
-
-          <div className="mx-auto mt-16 max-w-6xl">
-            <div className="aspect-[16/10] overflow-hidden rounded-xl bg-muted shadow-2xl">
-              <Image
-                src="/placeholder.svg?height=600&width=1000"
-                alt="Sokrati.space Full Dashboard"
-                width={1000}
-                height={600}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary/5">
+      <section className="py-16 md:py-24 bg-primary/5 mt-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Ready to Transform Your Workflow?
+              Begin Your Journey of Self-Discovery
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Join thousands of developers who are already building better
-              software with Sokrati.space
+              Start writing today and uncover the insights hidden in your own
+              words. It's free to get started.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button size="lg" asChild>
@@ -254,17 +223,11 @@ export default function SokratiPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get Started Free
+                  Start Your Free Journal
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg">
-                Schedule Demo
-              </Button>
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              No credit card required • 14-day free trial • Cancel anytime
-            </p>
           </div>
         </div>
       </section>

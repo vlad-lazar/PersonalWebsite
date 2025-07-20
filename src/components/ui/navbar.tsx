@@ -11,14 +11,17 @@ import { ModeToggle } from "./mode-toggle";
 
 const navigation = [
   { name: "Blog", href: "/blog" },
-  { name: "Sokrati.space", href: "/sokrati" },
+  { name: "sokrati.space", href: "/sokrati" },
   { name: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com", icon: Github },
-  { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
-  { name: "Twitter", href: "https://twitter.com", icon: Twitter },
+  { name: "GitHub", href: "https://github.com/vlad151", icon: Github },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/lazar-vlad",
+    icon: Linkedin,
+  },
 ];
 
 export function Navbar() {
@@ -30,10 +33,9 @@ export function Navbar() {
       <div className="flex justify-center px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-4xl flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Vlad Lazar</span>
+            <span className="text-xl font-bold">Vlad Lazǎr</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
