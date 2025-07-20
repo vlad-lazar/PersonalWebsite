@@ -1,3 +1,4 @@
+// src/app/page.tsx
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -11,41 +12,15 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar, ExternalLink } from "lucide-react";
 
-// Mock data for blog posts
-const featuredPosts = [
-  {
-    id: 1,
-    title: "Building Scalable Web Applications with Next.js",
-    excerpt:
-      "Exploring the latest features in Next.js 15 and how they can help you build better web applications.",
-    category: "Web Dev",
-    date: "2024-01-15",
-    slug: "building-scalable-web-applications-nextjs",
-    image: "/placeholder.svg?height=200&width=400",
-  },
-  {
-    id: 2,
-    title: "The Future of AI in Software Development",
-    excerpt:
-      "How artificial intelligence is transforming the way we write, test, and deploy code.",
-    category: "AI",
-    date: "2024-01-10",
-    slug: "future-ai-software-development",
-    image: "/placeholder.svg?height=200&width=400",
-  },
-  {
-    id: 3,
-    title: "Productivity Hacks for Developers",
-    excerpt:
-      "Simple techniques and tools that can significantly boost your development productivity.",
-    category: "Productivity",
-    date: "2024-01-05",
-    slug: "productivity-hacks-developers",
-    image: "/placeholder.svg?height=200&width=400",
-  },
-];
+// Import your blog post utility functions
+import { getSortedPostsData, BlogPostMetadata } from "@/lib/posts";
 
-export default function HomePage() {
+// HomePage will now be an async Server Component to fetch data
+export default async function HomePage() {
+  // Fetch the latest 3 blog posts
+  // ensure the actual `getSortedPostsData` function returns BlogPostMetadata[]
+  const featuredPosts: BlogPostMetadata[] = getSortedPostsData().slice(0, 3);
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -102,55 +77,64 @@ export default function HomePage() {
           </div>
 
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {featuredPosts.map((post) => (
-              <Card
-                key={post.id}
-                className="group hover:shadow-lg transition-shadow"
-              >
-                <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-                  <Image
-                    src={post.image || "/placeholder.svg"}
-                    alt={post.title}
-                    width={400}
-                    height={200}
-                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <Badge variant="secondary">{post.category}</Badge>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="mr-1 h-3 w-3" />
-                      {new Date(post.date).toLocaleDateString()}
-                    </div>
+            {/* Render dynamically fetched featuredPosts */}
+            {featuredPosts.length > 0 ? (
+              featuredPosts.map((post) => (
+                <Card
+                  key={post.slug} // Use slug as key, as IDs are mock-specific
+                  className="group hover:shadow-lg transition-shadow"
+                >
+                  <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
+                    <Image
+                      src={post.image || "/placeholder.svg"} // Use fallback if image is undefined or null
+                      alt={post.title}
+                      width={400}
+                      height={200}
+                      className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                    />
                   </div>
-                  <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="line-clamp-3">
-                    {post.excerpt}
-                  </CardDescription>
-                  <Button variant="ghost" className="mt-4 p-0 h-auto" asChild>
-                    <Link href={`/blog/${post.slug}`}>
-                      Read More
-                      <ArrowRight className="ml-1 h-3 w-3" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <Badge variant="secondary">{post.category}</Badge>
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <Calendar className="mr-1 h-3 w-3" />
+                        {new Date(post.date).toLocaleDateString()}
+                      </div>
+                    </div>
+                    <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="line-clamp-3">
+                      {post.excerpt}
+                    </CardDescription>
+                    <Button variant="ghost" className="mt-4 p-0 h-auto" asChild>
+                      <Link href={`/blog/${post.slug}`}>
+                        Read More
+                        <ArrowRight className="ml-1 h-3 w-3" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <div className="col-span-full text-center text-muted-foreground">
+                No blog posts available yet.
+              </div>
+            )}
           </div>
 
-          <div className="mt-12 text-center">
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/blog">
-                View All Posts
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+          {featuredPosts.length > 0 && ( // Only show "View All Posts" if there are posts
+            <div className="mt-12 text-center">
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/blog">
+                  View All Posts
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -161,11 +145,11 @@ export default function HomePage() {
             <div className="lg:order-2">
               <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted">
                 <Image
-                  src="/images/sentiment_analysis.png" // Placeholder for the Sokrati.space platform interface
+                  src="/images/sentiment_anlysis.png" // Placeholder for the Sokrati.space platform interface
                   alt="Sokrati.space Platform"
                   width={600}
                   height={400}
-                  unoptimized
+                  unoptimized // Consider if you truly need unoptimized; it bypasses Next.js optimization
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -179,11 +163,11 @@ export default function HomePage() {
                 self-reflection and understanding your own thought patterns.
               </p>
               <p className="mt-4 text-base leading-7 text-muted-foreground">
-                Beyond simply capturing your ideas, Sokrati uses Google's
+                Beyond simply capturing your ideas, Sokrati uses Google&apos;s
                 Natural Language API to analyze the sentiment of each note. This
                 provides you with powerful insights, visualized through charts,
-                to track your emotional trends over time—helping you connect
-                with your inner world in a new way.
+                to track your emotional trends over time&mdash;helping you
+                connect with your inner world in a new way.
               </p>
               <div className="mt-8">
                 <Button size="lg" asChild>

@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import type React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -7,7 +6,6 @@ import { Navbar } from "@/components/ui/navbar";
 import { ThemeProvider } from "next-themes";
 import { Footer } from "@/components/ui/footer";
 import { cn } from "@/lib/utils";
-import { Toaster as SonnerToaster } from "sonner"; // <--- Import Sonner's Toaster and alias it
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,10 +31,11 @@ export default function RootLayout({
         >
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow flex justify-center px-4 sm:px-6 lg:px-8">
+              <div className="w-full max-w-4xl">{children}</div>
+            </main>
             <Footer />
           </div>
-          <SonnerToaster /> {/* <--- Use Sonner's Toaster here */}
         </ThemeProvider>
       </body>
     </html>
