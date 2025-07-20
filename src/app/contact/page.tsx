@@ -142,7 +142,7 @@ export default function ContactPage() {
               possible.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 ">
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
@@ -215,13 +215,13 @@ export default function ContactPage() {
                 me.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 ">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                     <item.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 ">
                     <h3 className="font-medium">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">
                       {item.description}
@@ -290,9 +290,9 @@ export default function ContactPage() {
                 open to conversations that could lead to meaningful
                 collaborations.
               </p>
-              <Button variant="outline" className="w-full bg-transparent">
+              {/* <Button variant="outline" className="w-full bg-transparent">
                 Schedule a Call
-              </Button>
+              </Button> */}
             </CardContent>
           </Card>
         </div>
