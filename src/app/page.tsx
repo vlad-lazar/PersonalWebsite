@@ -145,7 +145,7 @@ export default async function HomePage() {
             <div className="lg:order-2">
               <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted">
                 <Image
-                  src="/images/sentiment_anlysis.png" // Placeholder for the Sokrati.space platform interface
+                  src="/images/sentiment_analysis.png" // Placeholder for the Sokrati.space platform interface
                   alt="Sokrati.space Platform"
                   width={600}
                   height={400}
