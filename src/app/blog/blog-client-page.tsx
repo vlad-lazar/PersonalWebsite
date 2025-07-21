@@ -1,4 +1,3 @@
-// src/app/blog/BlogClientPage.tsx
 "use client";
 
 import * as React from "react";
@@ -15,8 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calendar, Search, ArrowRight } from "lucide-react";
-
-import { BlogPostMetadata } from "@/lib/posts"; // Import the type
+import { BlogPostMetadata } from "@/lib/posts";
 
 interface BlogClientPageProps {
   initialPosts: BlogPostMetadata[];
@@ -30,6 +28,7 @@ export default function BlogClientPage({
   const [selectedCategory, setSelectedCategory] = React.useState("All");
   const [searchQuery, setSearchQuery] = React.useState("");
 
+  // Filter posts based on category and search query
   const filteredPosts = initialPosts.filter((post) => {
     const matchesCategory =
       selectedCategory === "All" || post.category === selectedCategory;
@@ -40,13 +39,12 @@ export default function BlogClientPage({
   });
 
   return (
-    <div className="container py-16 md:py-24">
-      <div className="mx-auto max-w-2xl text-center">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          My Blog
-        </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Insights, and thoughts on technology, development, and innovation
+    <div className="container py-8">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold tracking-tight mb-4">Blog</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Thoughts on technology, development, and life experiences.
         </p>
       </div>
 
@@ -80,53 +78,57 @@ export default function BlogClientPage({
       {/* Blog Posts Grid */}
       <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
         {filteredPosts.map((post: BlogPostMetadata) => (
-          <Card
-            key={post.slug}
-            className="group hover:shadow-lg transition-shadow"
-          >
-            <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-              <Image
-                src={"/images/globe.svg"}
-                alt={post.title}
-                width={400}
-                height={200}
-                className="h-full w-full object-cover transition-transform group-hover:scale-105"
-              />
-            </div>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <Badge variant="secondary">{post.category}</Badge>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <Calendar className="mr-1 h-3 w-3" />
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </div>
+          <Link key={post.slug} href={`/blog/${post.slug}`}>
+            <Card className="group hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
+                <Image
+                  src={post.image ?? "/images/globe.svg"}
+                  alt={post.title}
+                  width={400}
+                  height={200}
+                  unoptimized
+                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                />
               </div>
-              <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="line-clamp-3">
-                {post.excerpt}
-              </CardDescription>
-              <Button variant="ghost" className="mt-4 p-0 h-auto" asChild>
-                <Link href={`/blog/${post.slug}`}>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <Badge variant="secondary">{post.category}</Badge>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar className="mr-1 h-3 w-3" />
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </div>
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors">
+                  {post.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="line-clamp-2">
+                  {post.excerpt}
+                </CardDescription>
+                {post.readTime && (
+                  <div className="mt-4 text-sm text-muted-foreground">
+                    {post.readTime}
+                  </div>
+                )}
+                <div className="mt-4 flex items-center text-sm font-medium text-primary">
                   Read More
-                  <ArrowRight className="ml-1 h-3 w-3" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
+                  <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
 
+      {/* No posts found message */}
       {filteredPosts.length === 0 && (
-        <div className="mx-auto mt-16 max-w-2xl text-center">
-          <p className="text-lg text-muted-foreground">
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground">
             No posts found matching your criteria.
           </p>
         </div>

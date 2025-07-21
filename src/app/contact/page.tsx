@@ -42,11 +42,6 @@ const socialLinks = [
     href: "https://linkedin.com/in/lazar-vlad",
     icon: Linkedin,
   },
-  {
-    name: "Twitter/X",
-    href: "https://twitter.com/vladlazar_dev",
-    icon: Twitter,
-  },
 ];
 
 export default function ContactPage() {
@@ -142,7 +137,7 @@ export default function ContactPage() {
               possible.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6 ">
+          <CardContent className="space-y-6">
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
@@ -166,7 +161,7 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 mt-5">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -177,7 +172,7 @@ export default function ContactPage() {
                   required
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 mt-5">
                 <Label htmlFor="subject">Subject</Label>
                 <Input
                   id="subject"
@@ -187,7 +182,7 @@ export default function ContactPage() {
                   required
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 mt-5">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
@@ -198,7 +193,11 @@ export default function ContactPage() {
                   required
                 />
               </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                className="w-full mt-5"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>

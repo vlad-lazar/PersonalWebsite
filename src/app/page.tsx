@@ -39,7 +39,7 @@ export default async function HomePage() {
               Passionate about creating innovative solutions that bridge the gap
               between complex technology and human needs.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-x-6">
               <Button asChild size="lg">
                 <Link href="/blog">
                   Explore My Blog
@@ -65,8 +65,8 @@ export default async function HomePage() {
       </section>
 
       {/* Featured Blog Posts Section */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="py-16 md:py-24 w-full flex justify-center">
+        <div className="container w-full">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Latest Musings
@@ -76,7 +76,7 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto w-full mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 md:max-w-none lg:mx-0 justify-items-center">
             {/* Render dynamically fetched featuredPosts */}
             {featuredPosts.length > 0 ? (
               featuredPosts.map((post) => (
