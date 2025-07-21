@@ -80,43 +80,49 @@ export default async function HomePage() {
             {/* Render dynamically fetched featuredPosts */}
             {featuredPosts.length > 0 ? (
               featuredPosts.map((post) => (
-                <Card
-                  key={post.slug} // Use slug as key, as IDs are mock-specific
-                  className="group hover:shadow-lg transition-shadow"
-                >
-                  <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
-                    <Image
-                      src={post.image || "/placeholder.svg"} // Use fallback if image is undefined or null
-                      alt={post.title}
-                      width={400}
-                      height={200}
-                      className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                    />
-                  </div>
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <Badge variant="secondary">{post.category}</Badge>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="mr-1 h-3 w-3" />
-                        {new Date(post.date).toLocaleDateString()}
-                      </div>
+                <Link key={post.slug} href={`/blog/${post.slug}`}>
+                  <Card
+                    key={post.slug} // Use slug as key, as IDs are mock-specific
+                    className="group hover:shadow-lg transition-shadow"
+                  >
+                    <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
+                      <Image
+                        src={post.image || "/placeholder.svg"} // Use fallback if image is undefined or null
+                        alt={post.title}
+                        width={400}
+                        height={200}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      />
                     </div>
-                    <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="line-clamp-3">
-                      {post.excerpt}
-                    </CardDescription>
-                    <Button variant="ghost" className="mt-4 p-0 h-auto" asChild>
-                      <Link href={`/blog/${post.slug}`}>
-                        Read More
-                        <ArrowRight className="ml-1 h-3 w-3" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <Badge variant="secondary">{post.category}</Badge>
+                        <div className="flex items-center text-sm text-muted-foreground">
+                          <Calendar className="mr-1 h-3 w-3" />
+                          {new Date(post.date).toLocaleDateString()}
+                        </div>
+                      </div>
+                      <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                        {post.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="line-clamp-3">
+                        {post.excerpt}
+                      </CardDescription>
+                      <Button
+                        variant="ghost"
+                        className="mt-4 p-0 h-auto"
+                        asChild
+                      >
+                        <div className="flex flex-row">
+                          Read More
+                          <ArrowRight className="ml-1 h-3 w-3" />
+                        </div>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))
             ) : (
               <div className="col-span-full text-center text-muted-foreground">
