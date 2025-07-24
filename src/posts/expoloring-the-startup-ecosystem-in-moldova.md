@@ -19,19 +19,19 @@ Printre ele se alfǎ și Moldovioara noastrǎ dragǎ în care organizația Elve�
 - **Nu necesitǎ resurse extensive**
 - **Piața e în creștere**
 - **Digitalizarea e inevitabilǎ**
-- **Personale care au plecat pentru oportunitǎți mai bune au șansa sǎ se întoarcǎ**
+- **Persoane care au plecat pentru oportunitǎți mai bune au șansa sǎ se întoarcǎ**
 
 ## Trǎsǎturi caracteristice MITP
 
 ### Regim fiscal ușurat
 
-Un motiv foarte atractiv pentru rezidenții IT park este regimul fiscal usrat care reprezintǎ doar 7% taxǎ la venitul gross. Aceasta înlocuiește impozitul pe profit, impozitul pe veniturile salariale ale angajaților, contribuțiile de asigurǎri sociale și medicale, precum și taxele locale. Practic, aceasta înseamnǎ cǎ angajații companiilor rezidente în IT Park nu mai plǎtesc individual impozit pe venit, deoarece acesta este inclus în taxa unicǎ plǎtitǎ de companie. Acest sistem e atractiv atât pentru companii cât și pentur angajați fiind o oportunitate unicǎ pentru inovare.
+Un motiv foarte atractiv pentru rezidenții IT park este regimul fiscal ușurat care reprezintǎ doar 7% taxǎ la venitul gross. Aceasta înlocuiește impozitul pe profit, impozitul pe veniturile salariale ale angajaților, contribuțiile de asigurǎri sociale și medicale, precum și taxele locale. Practic, aceasta înseamnǎ cǎ angajații companiilor rezidente în IT Park nu mai plǎtesc individual impozit pe venit, deoarece acesta este inclus în taxa unicǎ plǎtitǎ de companie. Acest sistem e atractiv atât pentru companii cât și pentru angajați fiind o oportunitate unicǎ pentru inovare.
 
 ### Comunitate
 
-Numǎrul de companii și angajați este în creștere stabilǎ, demonstrînd cǎ mediul este unul sǎnǎtos. Comunitatea este una de care nu ți-e fricǎ sǎ te apropii, iar piața are nevoie de antreprenori și soluții noi. Viziunea este una simplǎ - Construim viitorul prin intermediul spațiului digital. Apar resurse de tot felul, chiar și [<u>podcasturi</u>](https://www.youtube.com/playlist?list=PLDQCHqm6uJTjRL5GyAKNn9jcbD0wMl2dB) care îți dau de înțeles cǎ se pornește un val de oamni care vor sǎ facǎ o schimbare.
+Numǎrul de companii și angajați este în creștere stabilǎ, demonstrînd cǎ mediul este unul sǎnǎtos. Comunitatea este una de care nu ți-e fricǎ sǎ te apropii, iar piața are nevoie de antreprenori și soluții noi. Viziunea este una simplǎ - Construim viitorul prin intermediul spațiului digital. Apar resurse de tot felul, chiar și [<u>podcasturi</u>](https://www.youtube.com/playlist?list=PLDQCHqm6uJTjRL5GyAKNn9jcbD0wMl2dB) care îți dau de înțeles cǎ se pornește un val de oameni care vor sǎ facǎ o schimbare.
 
-![q&a ](https://mitp.md/p/public/images/QA_Session_banner_new.png)
+![q&a](https://mitp.md/p/public/images/QA_Session_banner_new.png)
 
 ### Market tânǎr
 
