@@ -6,6 +6,7 @@ import { Navbar } from "@/components/ui/navbar";
 import { ThemeProvider } from "next-themes";
 import { Footer } from "@/components/ui/footer";
 import { cn } from "@/lib/utils";
+import { Toaster } from "sonner"; // Correct import of Toaster
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,13 +30,28 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* Main flex container for header, content, and footer */}
           <div className="flex flex-col min-h-screen">
             <Navbar />
+            {/*
+              Corrected main content centering:
+              - flex-grow: takes available vertical space
+              - flex justify-center: horizontally centers children (the div with max-w-4xl)
+              - px-4 sm:px-6 lg:px-8: adds responsive padding on the main element itself
+            */}
             <main className="flex-grow flex justify-center px-4 sm:px-6 lg:px-8">
+              {/*
+                This div ensures your page content has a max-width and is centered.
+                It's essential for readability on large screens.
+              */}
               <div className="w-full max-w-4xl">{children}</div>
             </main>
             <Footer />
           </div>
+          {/* Sonner Toaster: Render this as a self-closing component at the root */}
+          {/* It manages its own positioning and rendering */}
+          <Toaster richColors position="bottom-right" />{" "}
+          {/* Added richColors and position for better defaults */}
         </ThemeProvider>
       </body>
     </html>

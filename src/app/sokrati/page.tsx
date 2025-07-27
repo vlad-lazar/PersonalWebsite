@@ -78,7 +78,7 @@ export default function SokratiPage() {
               Now in Alpha
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-              sokrati.space:{" "}
+              Sokrati.space:{" "}
               <span className="text-primary">Your Intelligent</span> Journal
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
@@ -206,7 +206,7 @@ export default function SokratiPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary/5 mt-20">
+      <section className="py-16 md:py-24 bg-primary/5 mt-20 mb-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">

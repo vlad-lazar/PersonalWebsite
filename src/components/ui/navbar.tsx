@@ -16,9 +16,10 @@ import { ModeToggle } from "./mode-toggle";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const navigation = [
-  { name: "Blog", href: "/blog" },
   { name: "Homepage", href: "/" },
-  { name: "sokrati.space", href: "/sokrati" },
+  { name: "Blog", href: "/blog" },
+
+  { name: "Sokrati.space", href: "/sokrati" },
   { name: "Contact", href: "/contact" },
 ];
 

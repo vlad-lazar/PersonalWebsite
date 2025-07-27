@@ -33,7 +33,7 @@ export default async function HomePage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground sm:text-xl">
               Full-stack developer | Exploring new ideas on my blog | Creator of
-              sokrati.space
+              Sokrati.space
             </p>
             <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto">
               Passionate about creating innovative solutions that bridge the gap
@@ -145,7 +145,7 @@ export default async function HomePage() {
       </section>
 
       {/* Sokrati.space Promotion Section */}
-      <section className="py-16 md:py-24 bg-muted/50 p-10">
+      <section className="py-16 md:py-24 bg-muted/50 p-10 mb-20">
         <div className="container">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
             <div className="lg:order-2">
@@ -162,7 +162,7 @@ export default async function HomePage() {
             </div>
             <div className="lg:order-1">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Meet sokrati.space
+                Meet Sokrati.space
               </h2>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
                 Sokrati is a minimalist, intelligent journal designed for
@@ -178,7 +178,7 @@ export default async function HomePage() {
               <div className="mt-8">
                 <Button size="lg" asChild>
                   <Link href="/sokrati">
-                    Learn More about sokrati.space
+                    Learn More about Sokrati.space
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
