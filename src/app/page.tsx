@@ -80,10 +80,14 @@ export default async function HomePage() {
             {/* Render dynamically fetched featuredPosts */}
             {featuredPosts.length > 0 ? (
               featuredPosts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`}>
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="w-full"
+                >
                   <Card
                     key={post.slug} // Use slug as key, as IDs are mock-specific
-                    className="group hover:shadow-lg transition-shadow"
+                    className="group hover:shadow-lg transition-shadow w-full"
                   >
                     <div className="aspect-[16/9] overflow-hidden rounded-t-lg">
                       <Image
