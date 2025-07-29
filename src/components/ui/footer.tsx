@@ -8,6 +8,7 @@ const socialLinks = [
     href: "https://linkedin.com/in/lazar-vlad",
     icon: Linkedin,
   },
+  { name: "Twitter", href: "https://x.com/vladlazzar", icon: Twitter }, // Added Twitter/X
 ];
 
 const quickLinks = [

@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { Footer } from "@/components/ui/footer";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner"; // Correct import of Toaster
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,7 +51,7 @@ export default function RootLayout({
           </div>
           {/* Sonner Toaster: Render this as a self-closing component at the root */}
           {/* It manages its own positioning and rendering */}
-          <Toaster richColors position="bottom-right" />{" "}
+          <Toaster richColors position="bottom-right" /> <Analytics />
           {/* Added richColors and position for better defaults */}
         </ThemeProvider>
       </body>

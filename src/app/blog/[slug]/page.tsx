@@ -162,6 +162,14 @@ export default async function BlogPostPage({
                 >
                   <Linkedin className="h-5 w-5" />
                 </Link>
+                <Link
+                  href="https://x.com/vladlazzar"
+                  className="text-muted-foreground hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Twitter className="h-5 w-5" />
+                </Link>
               </div>
             </div>
           </div>

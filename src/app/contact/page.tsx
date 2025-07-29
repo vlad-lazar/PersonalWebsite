@@ -292,6 +292,19 @@ export default function ContactPage() {
               {/* <Button variant="outline" className="w-full bg-transparent">
                 Schedule a Call
               </Button> */}
+              <Button
+                asChild
+                variant="outline"
+                className="w-full bg-transparent"
+              >
+                <a
+                  href="https://calendly.com/lazar-vlad151/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a Call
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>

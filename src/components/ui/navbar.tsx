@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Github, Linkedin } from "lucide-react";
+import { Menu, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -29,6 +29,11 @@ const socialLinks = [
     name: "LinkedIn",
     href: "https://linkedin.com/in/lazar-vlad",
     icon: Linkedin,
+  },
+  {
+    name: "X",
+    href: "https://x.com/vladlazzar",
+    icon: Twitter,
   },
 ];
 
