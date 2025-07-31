@@ -12,7 +12,7 @@ tags: ["Next.js", "React", "AI", "Product Development", "Sokrati.space"]
 
 As a full-stack developer, I've always been driven by the challenge of creating robust and elegant web applications. My journey in frontend development has been deeply rooted in the React ecosystem, a framework I’ve come to know and love for its component-based architecture and powerful ecosystem.
 
-But this past summer, I decided to take on a personal project that would not only test my technical expertise but also push me to embrace a new development philosophy. The goal was to build [Sokrati.space](https://sokrati.space), a simple journaling app with a powerful, data-driven twist.
+But this summer, I decided to take on a personal project that would not only test my technical expertise but also push me to embrace a new development philosophy. The goal was to build [Sokrati.space](https://sokrati.space), a simple journaling app with a powerful, data-driven twist.
 
 ## A Simple Idea with a Technical Twist
 
