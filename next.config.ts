@@ -1,5 +1,5 @@
 // PWA support
-const withPWA = require("next-pwa")(require("./next-pwa.config.js"));
+const withPWA = require("next-pwa")(require("./next-pwa.config.ts"));
 
 const nextConfig = withPWA({
   images: {
