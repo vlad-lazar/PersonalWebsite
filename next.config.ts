@@ -1,24 +1,23 @@
-import type { NextConfig } from "next";
+// PWA support
+const withPWA = require("next-pwa")(require("./next-pwa.config.js"));
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = withPWA({
   images: {
-    // This is the new configuration to accept images from any host
     remotePatterns: [
       {
-        protocol: "http", // Allow HTTP (for local testing or specific cases)
-        hostname: "**", // Wildcard for any hostname
-        port: "", // Any port
-        pathname: "**", // Any path
+        protocol: "http",
+        hostname: "**",
+        port: "",
+        pathname: "**",
       },
       {
-        protocol: "https", // Allow HTTPS (recommended for production)
-        hostname: "**", // Wildcard for any hostname
-        port: "", // Any port
-        pathname: "**", // Any path
+        protocol: "https",
+        hostname: "**",
+        port: "",
+        pathname: "**",
       },
     ],
   },
-};
+});
 
-export default nextConfig;
+module.exports = nextConfig;
