@@ -123,18 +123,20 @@ export default function BlogClientPage({
                 />
               </div>
               <CardHeader>
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex items-left justify-between mb-2 flex-col">
                   {" "}
                   {/* Added mb-2 for spacing */}
-                  <Badge variant="secondary">{post.category}</Badge>
                   <div className="flex items-center text-sm text-muted-foreground">
-                    <Calendar className="mr-1 h-3 w-3" />
+                    <Calendar className="mr-1 ml-1 h-3 w-3" />
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
                     })}
                   </div>
+                  <Badge className="mt-1" variant="secondary">
+                    {post.category}
+                  </Badge>
                 </div>
                 <CardTitle className="group-hover:text-primary transition-colors text-xl font-semibold leading-tight">
                   {" "}
