@@ -42,6 +42,11 @@ const socialLinks = [
     href: "https://linkedin.com/in/lazar-vlad",
     icon: Linkedin,
   },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/vladlazzar",
+    icon: Twitter,
+  },
 ];
 
 export default function ContactPage() {

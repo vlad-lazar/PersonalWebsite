@@ -34,7 +34,7 @@ Using the exact same tech stack—Next.js, Tailwind, and a headless approach for
 
 You can see the final result at [connectomics.club](https://connectomics.club). This project, like my personal site, was a quick-turnaround effort that took only a few hours of development. The ability to deliver a custom, high-quality solution with such speed felt like a superpower.
 
-## Case Study 3: The Professional Portfolio - MihairRailean.site
+## Case Study 3: The Professional Portfolio - MihaiRailean.site
 
 The final project came from a conversation with another friend who was navigating the job market. He needed a modern portfolio to stand out from the crowd, showcasing not only his professional experience but also his photography and other interests.
 

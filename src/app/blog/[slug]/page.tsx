@@ -139,7 +139,7 @@ export default async function BlogPostPage({
               <span className="text-xl font-bold text-primary">VL</span>
             </div>
             <div className="flex-1">
-              <h3 className="text-lg font-semibold">Vlad Lazar</h3>
+              <h3 className="text-lg font-semibold">Vlad Lazǎr</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Full-stack developer passionate about building innovative
                 solutions and sharing knowledge through writing. Creator of
