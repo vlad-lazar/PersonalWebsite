@@ -99,14 +99,16 @@ export default async function HomePage() {
                       />
                     </div>
                     <CardHeader>
-                      <div className="flex items-center justify-between">
-                        <Badge variant="secondary">{post.category}</Badge>
+                      <div className="flex items-left justify-between flex-col">
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <Calendar className="mr-1 h-3 w-3" />
+                          <Calendar className="mr-1 ml-1 h-3 w-3" />
                           {new Date(post.date).toLocaleDateString()}
                         </div>
+                        <Badge variant="secondary" className="mt-1">
+                          {post.category}
+                        </Badge>
                       </div>
-                      <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
+                      <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors mt-1">
                         {post.title}
                       </CardTitle>
                     </CardHeader>
