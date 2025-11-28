@@ -159,6 +159,135 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Rainbow Theme Colors */
+.rainbow {
+  --background: oklch(0.18 0.02 280);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.22 0.04 280);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.22 0.04 280);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.65 0.25 330);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.6 0.2 240);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.3 0.05 280);
+  --muted-foreground: oklch(0.75 0.05 280);
+  --accent: oklch(0.7 0.22 180);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.65 0.24 25);
+  --border: oklch(0.4 0.12 280);
+  --input: oklch(0.35 0.1 280);
+  --ring: oklch(0.7 0.25 300);
+  --chart-1: oklch(0.7 0.25 0);
+  --chart-2: oklch(0.75 0.22 120);
+  --chart-3: oklch(0.7 0.25 240);
+  --chart-4: oklch(0.72 0.24 60);
+  --chart-5: oklch(0.68 0.26 300);
+  --sidebar: oklch(0.2 0.03 280);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.65 0.25 330);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.3 0.08 280);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.4 0.12 280);
+  --sidebar-ring: oklch(0.7 0.25 300);
+
+  /* Animated gradient background */
+  position: relative;
+}
+
+/* Rainbow theme animations */
+@keyframes rainbow-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px oklch(0.65 0.25 330 / 0.3),
+                0 0 40px oklch(0.65 0.25 330 / 0.2),
+                0 0 60px oklch(0.65 0.25 330 / 0.1);
+  }
+  25% {
+    box-shadow: 0 0 20px oklch(0.7 0.22 180 / 0.3),
+                0 0 40px oklch(0.7 0.22 180 / 0.2),
+                0 0 60px oklch(0.7 0.22 180 / 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px oklch(0.6 0.2 240 / 0.3),
+                0 0 40px oklch(0.6 0.2 240 / 0.2),
+                0 0 60px oklch(0.6 0.2 240 / 0.1);
+  }
+  75% {
+    box-shadow: 0 0 20px oklch(0.72 0.24 60 / 0.3),
+                0 0 40px oklch(0.72 0.24 60 / 0.2),
+                0 0 60px oklch(0.72 0.24 60 / 0.1);
+  }
+}
+
+@keyframes rainbow-border {
+  0%, 100% { border-color: oklch(0.65 0.25 330); }
+  25% { border-color: oklch(0.7 0.22 180); }
+  50% { border-color: oklch(0.6 0.2 240); }
+  75% { border-color: oklch(0.72 0.24 60); }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sparkle element styling */
+.sparkle {
+  background: radial-gradient(circle,
+    oklch(0.9 0.3 330) 0%,
+    oklch(0.8 0.25 60) 50%,
+    transparent 70%);
+  border-radius: 50%;
+  animation: sparkle 4s ease-in-out infinite;
+  will-change: opacity, transform;
+  box-shadow: 0 0 10px oklch(0.7 0.3 300 / 0.6);
+}
+
+/* Apply animations to rainbow theme elements - reduced for performance */
+.rainbow section,
+.rainbow article {
+  animation: rainbow-glow 12s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+/* Sparkle container for rainbow theme */
+.rainbow::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 30%, oklch(0.7 0.25 330 / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, oklch(0.7 0.22 180 / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, oklch(0.6 0.2 240 / 0.1) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content is above the animated background */
+.rainbow > * {
+  position: relative;
+  z-index: 1;
+}
+
 /*
   @custom-variant:
   This directive is used to define custom variants in Tailwind CSS.

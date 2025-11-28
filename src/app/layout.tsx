@@ -8,6 +8,7 @@ import { Footer } from "@/components/ui/footer";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner"; // Correct import of Toaster
 import { Analytics } from "@vercel/analytics/next";
+import { RainbowSparkles } from "@/components/ui/rainbow-sparkles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,6 +59,7 @@ export default function RootLayout({
           {/* It manages its own positioning and rendering */}
           <Toaster richColors position="bottom-right" /> <Analytics />
           {/* Added richColors and position for better defaults */}
+          <RainbowSparkles />
         </ThemeProvider>
       </body>
     </html>
