@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Toaster } from "sonner"; // Correct import of Toaster
 import { Analytics } from "@vercel/analytics/next";
 import { RainbowSparkles } from "@/components/ui/rainbow-sparkles";
+import { NyanCats } from "@/components/ui/nyan-cats";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -60,6 +61,7 @@ export default function RootLayout({
           <Toaster richColors position="bottom-right" /> <Analytics />
           {/* Added richColors and position for better defaults */}
           <RainbowSparkles />
+          <NyanCats />
         </ThemeProvider>
       </body>
     </html>
