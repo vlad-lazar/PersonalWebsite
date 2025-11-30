@@ -121,6 +121,44 @@
 }
 
 /*
+  Light Theme Colors (explicit class for next-themes)
+  This ensures light theme is properly applied when switching from other themes
+*/
+.light {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/*
   Dark Theme Colors
   These variables will override the :root variables when the `dark` class is present
   on the `html` or `body` element (usually `html` when using `next-themes`).
@@ -160,6 +198,7 @@
 }
 
 /* Rainbow Theme Colors */
+html.rainbow,
 .rainbow {
   --background: oklch(0.18 0.02 280);
   --foreground: oklch(0.98 0 0);
@@ -192,9 +231,6 @@
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: oklch(0.4 0.12 280);
   --sidebar-ring: oklch(0.7 0.25 300);
-
-  /* Animated gradient background */
-  position: relative;
 }
 
 /* Rainbow theme animations */
@@ -230,12 +266,12 @@
 
 @keyframes sparkle {
   0%, 100% {
-    opacity: 0;
-    transform: scale(0);
+    opacity: 0.5;
+    transform: scale(0.5);
   }
   50% {
-    opacity: 0.8;
-    transform: scale(1);
+    opacity: 1;
+    transform: scale(1.5);
   }
 }
 
@@ -248,16 +284,19 @@
 /* Sparkle element styling */
 .sparkle {
   background: radial-gradient(circle,
-    oklch(0.9 0.3 330) 0%,
-    oklch(0.8 0.25 60) 50%,
+    #ff1493 0%,
+    #00ffff 50%,
     transparent 70%);
   border-radius: 50%;
   animation: sparkle 4s ease-in-out infinite;
   will-change: opacity, transform;
-  box-shadow: 0 0 10px oklch(0.7 0.3 300 / 0.6);
+  box-shadow: 0 0 20px #ff1493, 0 0 30px #00ffff;
+  opacity: 1;
 }
 
 /* Apply animations to rainbow theme elements - reduced for performance */
+html.rainbow section,
+html.rainbow article,
 .rainbow section,
 .rainbow article {
   animation: rainbow-glow 12s ease-in-out infinite;
@@ -265,6 +304,7 @@
 }
 
 /* Sparkle container for rainbow theme */
+html.rainbow::before,
 .rainbow::before {
   content: '';
   position: fixed;
@@ -283,6 +323,7 @@
 }
 
 /* Ensure content is above the animated background */
+html.rainbow > body > *,
 .rainbow > * {
   position: relative;
   z-index: 1;
@@ -317,22 +358,22 @@
 .rainbow-trail {
   background: repeating-linear-gradient(
     0deg,
-    oklch(0.7 0.25 0) 0px,
-    oklch(0.7 0.25 0) 4px,
-    oklch(0.75 0.22 60) 4px,
-    oklch(0.75 0.22 60) 8px,
-    oklch(0.72 0.24 120) 8px,
-    oklch(0.72 0.24 120) 12px,
-    oklch(0.7 0.22 180) 12px,
-    oklch(0.7 0.22 180) 16px,
-    oklch(0.6 0.2 240) 16px,
-    oklch(0.6 0.2 240) 20px,
-    oklch(0.65 0.25 300) 20px,
-    oklch(0.65 0.25 300) 24px
+    #ff0000 0px,
+    #ff0000 4px,
+    #ffff00 4px,
+    #ffff00 8px,
+    #00ff00 8px,
+    #00ff00 12px,
+    #00ffff 12px,
+    #00ffff 16px,
+    #0000ff 16px,
+    #0000ff 20px,
+    #ff00ff 20px,
+    #ff00ff 24px
   );
   background-size: 24px 24px;
   animation: rainbow-trail-animate 0.5s linear infinite;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 /*

@@ -37,6 +37,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
+          themes={["light", "dark", "rainbow"]}
         >
           {/* Main flex container for header, content, and footer */}
           <div className="flex flex-col min-h-screen">
